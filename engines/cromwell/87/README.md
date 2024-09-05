@@ -1,5 +1,9 @@
 # Cromwell 87
 
+# Installation
+1. Download JDK 11: https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html
+2. Download cromwell-87.jar: https://github.com/broadinstitute/cromwell/releases/tag/87
+
 # Execution command:
 ```bash
 /home/nap24/bin/jdk/jdk-11.0.23/bin/java -jar /home/nap24/bin/cromwell-bin/cromwell-87.jar \
