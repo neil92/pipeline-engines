@@ -1,9 +1,10 @@
-#draft-2
+version 1.0
 
 task filter {
-  File all_variants
-  String filtered_vcf_file_basename
-
+  input {
+    File all_variants
+    String filtered_vcf_file_basename
+  }
   command {
     vcftools --vcf ${all_variants} --remove-indels \
         --recode --recode-INFO-all \
@@ -18,9 +19,10 @@ task filter {
 }
 
 task count {
-  File filtered_vcf
-  String count_file
-
+  input {
+    File filtered_vcf
+    String count_file
+  }
   command {
     gatk CountVariants -V ${filtered_vcf} > ${count_file}
   }
@@ -34,10 +36,11 @@ task count {
 }
 
 workflow filter_and_count {
-  File all_variants
-  String filtered_vcf_file_basename
-  String count_file
-
+  input {
+    File all_variants
+    String filtered_vcf_file_basename
+    String count_file
+  }
   call filter {
     input: all_variants=all_variants,
       filtered_vcf_file_basename=filtered_vcf_file_basename
