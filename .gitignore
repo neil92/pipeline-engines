@@ -2,6 +2,9 @@
 cromwell-executions/*
 cromwell_workflow_logs/*
 
+# nextflow default output
+engines/nextflow/24.04.3/.nextflow/*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
