@@ -1,3 +1,8 @@
+# cromwell default output
+cromwell-executions/*
+cromwell_workflow_logs/*
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

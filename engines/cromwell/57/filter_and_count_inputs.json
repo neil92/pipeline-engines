@@ -1,0 +1,5 @@
+{
+  "filter_and_count.filtered_vcf_file_basename": "00-All_papu_filtered",
+  "filter_and_count.all_variants": "/home/nap24/bin/pipeline-engines/00-All_papu2.vcf",
+  "filter_and_count.count_file": "count_all_papu.txt"
+}

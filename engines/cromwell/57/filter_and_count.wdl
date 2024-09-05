@@ -26,12 +26,12 @@ task count {
     docker: "pegi3s/gatk-4:latest"
   }
   output {
-    File filtered_vcf=filtered_vcf
+    File output_vcf=filtered_vcf
     File count="${count_file}"
   }
 }
 
-workflow {
+workflow filter_and_count {
   File all_variants
   String filtered_vcf_file_basename
   String count_file
@@ -41,7 +41,7 @@ workflow {
       filtered_vcf_file_basename=filtered_vcf_file_basename
   }
   call count {
-    input: filtered_vcf=filter.filtered_vcf
+    input: filtered_vcf=filter.filtered_vcf,
       count_file=count_file
   }
 }
