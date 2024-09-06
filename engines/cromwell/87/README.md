@@ -1,10 +1,10 @@
 # Cromwell 87
 
-# Installation
+## Installation
 1. Download JDK 11: https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html
 2. Download cromwell-87.jar: https://github.com/broadinstitute/cromwell/releases/tag/87
 
-# Execution command:
+## Execution command:
 ```bash
 /home/nap24/bin/jdk/jdk-11.0.23/bin/java -jar /home/nap24/bin/cromwell-bin/cromwell-87.jar \
     run -i engines/cromwell/57/filter_and_count_inputs.json engines/cromwell/87/filter_and_count.wdl
@@ -17,7 +17,7 @@ in the filter_and_count.wdl
     run -i engines/cromwell/57/filter_and_count_inputs.json engines/cromwell/57/filter_and_count.wdl
 ```
 
-# Conversion Notes:
+## Conversion Notes:
 The only thing I had to change was the following:
 1. Version line on line 1 of the code.
 2. Encasing all the inputs in curly braces.
