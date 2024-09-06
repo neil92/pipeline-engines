@@ -1,44 +1,43 @@
-process filter {
+params.all_variants
+params.filtered_vcf_file_basename
+params.count_file
+
+process filter_vcf {
   input:
-    file all_variants
-    val filtered_vcf_file_basename
+  file all_variants
+  val filtered_vcf_file_basename
 
   output:
-    filtered_vcf=file("$filtered_vcf_file_basename.recode.vcf")
+  path "${filtered_vcf_file_basename}.recode.vcf"
 
   script:
   """
   vcftools --vcf ${all_variants} --remove-indels \
       --recode --recode-INFO-all \
       --out ${filtered_vcf_file_basename}
+  head "${filtered_vcf_file_basename}.recode.vcf"
   """
 }
 
-process count {
+process count_vcf {
   input:
-    file filtered_vcf
-    val count_file
+  file filtered_vcf
+  val count_file
   
   output:
-    output_vcf=filtered_vcf
-    count=file("${count_file}")
+  path count_file
   
   script:
   """
-  gatk CountVariants -V ${filtered_vcf} > ${count_file}
+  gatk CountVariants -V ${filtered_vcf} > "${count_file}"
   """
 }
 
-workflow filter_and_count {
-  take:
-    path all_variants
-    val filtered_vcf_file_basename
-    val count_filename
-
+workflow {
   main:
-    filtered_vcf = filter(all_variants, filtered_vcf_file_basename)
-    (output_vcf, count_file) = count(filtered_vcf, count_filename)
-  
+  filtered_vcf = filter_vcf(file(params.all_variants), params.filtered_vcf_file_basename)
+  count_file_vcf = count_vcf(filtered_vcf, params.count_file)
+
   emit:
-    count_file.out
+  count_vcf.out
 }
