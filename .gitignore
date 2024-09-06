@@ -11,6 +11,7 @@ engines/nextflow/24.04.3/work/*
 engines/toil/7.0.0/00-All_papu_filtered.recode.vcf
 engines/toil/7.0.0/output.txt
 engines/toil/7.0.0/count_all_papu.txt
+engines/toil/7.0.0/wdl-out-s_hmd0dh/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
