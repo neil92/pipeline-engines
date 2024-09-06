@@ -6,6 +6,7 @@ Going to try to compare:
     * Notes on running cromwell: [version 57](engines/cromwell/57/README.md) and
       [version 87](engines/cromwell/87/README.md)
 2. Nextflow: https://www.nextflow.io/
+    * Notes on running nextflow: [version 24.04.3](engines/nextflow/24.04.3/README.md)
 3. Toil: https://toil.readthedocs.io/en/latest/
 4. Airflow: https://airflow.apache.org/
 
