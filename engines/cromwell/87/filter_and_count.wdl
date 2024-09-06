@@ -27,7 +27,7 @@ task count {
     gatk CountVariants -V ${filtered_vcf} > ${count_file}
   }
   runtime {
-    docker: "pegi3s/gatk-4:latest"
+    docker: "pegi3s/gatk-4:4.1.4.1"
   }
   output {
     File output_vcf=filtered_vcf
