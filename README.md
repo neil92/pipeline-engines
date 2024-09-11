@@ -10,6 +10,7 @@ Going to try to compare:
 3. [Toil](https://toil.readthedocs.io/en/latest/)
     * Notes on running toil: [version 7.0.0](engines/toil/7.0.0/README.md)
 4. [Airflow](https://airflow.apache.org/)
+    * Notes on running airflow: [version 2.4.1](engines/airflow/2.1.4/README.md) and [version 2.10.1](engines/airflow/2.10.1/README.md)
 
 Steps of the pipeline:
 1. Filter VCF file to remove indels.
