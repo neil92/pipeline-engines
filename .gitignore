@@ -1,3 +1,10 @@
+# For scratch work
+scratch/*
+
+# For Airflow
+engines/airflow/2.1.4/home/*
+engines/airflow/2.10.1/home/*
+
 # cromwell default output
 cromwell-executions/*
 cromwell_workflow_logs/*
